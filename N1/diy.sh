@@ -8,7 +8,7 @@
 sed -i '/luci-app-attendedsysupgrade/d' feeds/luci/collections/luci/Makefile
 
 # 添加源
-echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+#echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
 sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
 # 更新 feeds（第一次）
@@ -31,11 +31,11 @@ echo "
 # 插件
 CONFIG_PACKAGE_luci-app-amlogic=y
 CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-proto-wireguard=y
+#CONFIG_PACKAGE_luci-proto-wireguard=y
 CONFIG_PACKAGE_luci-app-daed=y
 CONFIG_PACKAGE_luci-app-linkease=y
 CONFIG_PACKAGE_luci-app-nikki=y
-CONFIG_PACKAGE_luci-app-oaf=y
+#CONFIG_PACKAGE_luci-app-oaf=y
 " >> .config
 
 # 修改默认IP
