@@ -13,6 +13,7 @@ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.con
 
 # 更新 feeds（第一次）
 ./scripts/feeds update -a
+./scripts/feeds install -a
 # Add packages
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 #git clone #https://github.com/kenzok8/openwrt-clashoo.git package/openwrt-clashoo
@@ -35,7 +36,6 @@ CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-daed=y
 CONFIG_PACKAGE_luci-app-linkease=y
 CONFIG_PACKAGE_luci-app-nikki=y
-#CONFIG_PACKAGE_luci-app-oaf=y
 " >> .config
 
 # 修改默认IP
@@ -60,4 +60,4 @@ cp -f $GITHUB_WORKSPACE/argon/icon/favicon-16x16.png feeds/luci/themes/luci-them
 cp -f $GITHUB_WORKSPACE/argon/icon/favicon-32x32.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-32x32.png
 cp -f $GITHUB_WORKSPACE/argon/icon/favicon-96x96.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-96x96.png
 cp -f $GITHUB_WORKSPACE/argon/icon/ms-icon-144x144.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png
-./scripts/feeds install -a
+
